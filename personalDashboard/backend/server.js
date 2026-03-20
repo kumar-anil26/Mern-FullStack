@@ -8,7 +8,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "http://localhost:5173", // The exact URL of your frontend
+    origin: "https://personal-dashboard-theta-two.vercel.app/", // The exact URL of your frontend
     credentials: true, // Allows the frontend to send cookies/tokens
   })
 );
