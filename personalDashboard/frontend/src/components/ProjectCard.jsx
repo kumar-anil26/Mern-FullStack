@@ -20,7 +20,7 @@ const ProjectCard = ({
     <div className="p-4 flex-1 flex flex-col justify-between">
       <div>
         <h4 className="text-lg font-bold text-white mb-1">{title}</h4>
-        <p className="text-xs text-gray-400 mb-2 truncate">{description}</p>
+        <p className="text-xs text-gray-400 mb-2">{description}</p>
         <p className="text-xs font-medium text-gray-500">
           <span className="text-white">Tech:</span> {techStack}
         </p>
