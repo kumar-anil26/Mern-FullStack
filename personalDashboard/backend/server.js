@@ -6,9 +6,21 @@ require("dotenv").config();
 
 const app = express();
 
+const allowedOrigins = [
+  "https://personal-dashboard-theta-two.vercel.app", // Your main production URL
+  "https://personal-dashboard-owe18r2kr-kumar-anil26s-projects.vercel.app", // The preview URL from the error
+];
+
 app.use(
   cors({
-    origin: "https://personal-dashboard-theta-two.vercel.app",
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like postman or curl) or if the origin is in our array
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   })
 );
